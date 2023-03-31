@@ -1,0 +1,236 @@
+.about {
+    position: relative;
+
+    padding: 40px 0;
+
+    background-color: #FFF5F6;
+
+    @media screen and (max-width: 767px) {
+        background-image: url('../images/320px/made-bg-left.png'),
+            url('../images/320px/made-bg-right.png');
+        background-size: 43px, 72px;        
+        background-position: left 0 top 570px, right 0 top 585px;
+        background-repeat: no-repeat;
+
+        @include bg_x2 {
+            background-image: url('../images/320px/made-bg-left@2x.png'),
+                url('../images/320px/made-bg-right@2x.png');            
+        }
+    }
+
+    @media screen and (min-width: $tablet) {
+        padding: 20px 0 80px;
+    }
+
+    @media screen and (min-width: $desktop) {
+        padding: 60px 0 60px;
+
+        background-image: url('../images/1280px/made-bg-left.png'),
+            url('../images/1280px/made-bg-right.png');
+        background-position: left 0 top 190px, right 0 top 200px;
+        background-repeat: no-repeat;
+        background-size: 180px, 279px;
+
+        @include bg_x2 {
+            background-image: url('../images/1280px/made-bg-left@2x.png'),
+                url('../images/1280px/made-bg-right@2x.png');
+        }
+    }    
+}
+
+.container-about {   
+    @media screen and (min-width: $tablet) {
+        padding: 0 32px;
+    }
+
+    @media screen and (min-width: $desktop) {
+        padding: 0 14px;
+    }
+}
+
+.about-title {
+    font-family: 'Titan One';
+    font-weight: 400;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.section__pretitle {
+    margin-bottom: 16px;
+
+    font-size: 18px;
+    line-height: 1.17;
+
+    color: var(--accent-color);
+}
+
+.section__title {
+    font-size: 34px;
+    line-height: 1.15;
+    letter-spacing: 0.04em;
+
+    color: var(--second-title-color);
+}
+
+.section__title--about {
+    margin-bottom: 32px;
+    @media screen and (min-width: $tablet) {
+        margin-bottom: 40px;
+    }
+
+    @media screen and (min-width: $desktop) {
+       margin-bottom: 60px;
+    }
+}
+
+.about__content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.cow {    
+    flex-grow: 1;
+    margin-bottom: 40px;
+
+    @media screen and (min-width: $mobile) {
+        max-width: 440px;                
+    }
+
+    @media screen and (min-width: $tablet) {
+        max-width: 336px;
+        margin-bottom: 0;
+        margin-right: 32px;        
+    }
+    
+    @media screen and (min-width: $desktop) {
+        max-width: 501px;
+        margin-right: 139px;
+    }
+}
+
+.about__text-wrapper {
+    margin-right: 60px;
+
+    @media screen and (min-width: $tablet) {
+        width: 334px;
+        margin-right: 0;
+    }
+
+    @media screen and (min-width: $desktop) {
+        width: 463px;        
+    }   
+}
+
+.about__text {
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    
+}
+
+.about__text--main {
+    font-size: 12px;
+    line-height: 1.62;
+
+    color: #000000;
+
+    @media screen and (min-width: $tablet) {
+        font-size: 14px;
+        line-height: 1.76;
+    }
+
+    @media screen and (min-width: $desktop) {
+        font-size: 16px;
+    }      
+}
+
+.about__text--description {
+    margin-top: 20px;
+
+    font-size: 12px;
+    line-height: 1.62;
+    letter-spacing: 0.04em;
+
+    color: var(--text-color);
+    
+    @media screen and (min-width: $tablet) {
+        margin-top: 32px;
+
+        font-size: 14px;
+        line-height: 1.76;
+    }
+
+    @media screen and (min-width: $desktop) {
+        line-height: 1.94;
+    }
+}
+
+.btn {
+    cursor: pointer;
+    font-family: inherit;
+    border-radius: 22px;
+    border: none;
+    padding: 0 37px;
+    height: 44px;
+
+    transition: background-color var(--transition-duration) var(--transition-timing-function);
+}
+
+.about__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 176px;
+    margin-top: 20px;
+
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.28;
+    
+    background-color: var(--btn-light);
+
+    color: var(--main-btn-color);
+
+    @media screen and (min-width: $tablet) {
+        margin-top: 40px;
+
+        font-size: 16px;
+        line-height: 1.31;
+    }
+    
+    &:hover,
+    &:focus {
+        background-color: var(--second-button-color);
+    }   
+}
+
+.about__icon {
+    margin-left: 13px;    
+}
+
+.read-more-checker {
+    opacity: 0;
+    position: absolute;
+}
+
+.more {
+    display: none;
+}
+
+.read-more-checker:checked~.more {
+    display: block;
+    transition: var(--transition-duration);
+}
+
+.read-more-checker~.read-more-btn {
+    &:before {
+        content: "Read more";
+    }
+}
+
+.read-more-checker:checked~.read-more-btn {
+    &:before {
+        content: "Less";
+    }
+}
